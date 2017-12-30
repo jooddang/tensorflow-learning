@@ -11,7 +11,6 @@ optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
 train = optimizer.minimize(cost)
 s = tf.Session()
 s.run(tf.global_variables_initializer())
-s.run(hypothesis)
 for step in range(2001):
     s.run(train)
     if step % 100 == 0:

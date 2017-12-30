@@ -6,7 +6,7 @@ Y = tf.placeholder(tf.float32, shape=[None])
 W = tf.Variable(tf.random_normal([1]), name='weight')
 b = tf.Variable(tf.random_normal([1]), name='bias')
 hypothesis = W * X + b
-cost = tf.reduce_min(tf.square(hypothesis - Y))
+cost = tf.reduce_mean(tf.square(hypothesis - Y))
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
 train = optimizer.minimize(cost)
 s = tf.Session()
